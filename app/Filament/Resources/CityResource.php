@@ -21,7 +21,9 @@ class CityResource extends Resource
 {
     protected static ?string $model = City::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-office-building';
+    protected static ?string $navigationGroup = 'System Management';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -31,9 +33,9 @@ class CityResource extends Resource
                     ->schema([
                         Select::make('state_id')
                             ->relationship('state','name')
-                            ->label('State'),
+                            ->label('State')->required(),
 
-                        TextInput::make('name'),
+                        TextInput::make('name')->required()->maxLength(50),
 
                     ])
                     ->columns(2)
