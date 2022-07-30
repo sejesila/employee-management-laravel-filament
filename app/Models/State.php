@@ -11,18 +11,19 @@ class State extends Model
 
     protected $fillable = ['name', 'country_id'];
 
-    public function cities()
-    {
-        $this->hasMany(City::class);
-    }
 
-    public function country()
+
+    public function country(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Country::class);
     }
 
-    public function employees()
+    public function employees(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Employee::class);
+    }
+    public function cities()
+    {
+        return $this->hasMany(City::class);
     }
 }
