@@ -19,8 +19,8 @@ class EmployeeStatsOverview extends BaseWidget
 //                ->description('3% increase')
 //                ->descriptionIcon('heroicon-s-trending-up'),
 
-            Card::make($kenya->name . " Employees", $kenya->employees_count),
-            Card::make($uk->name . " Employees", $uk->employees_count),
+            Card::make("Kenyan Employees", $kenya ? $kenya->employees_count :0),
+            Card::make("UK Employees", $uk ?$uk->employees_count:0),
 
         ];
     }

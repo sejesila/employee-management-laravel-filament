@@ -39,8 +39,8 @@ class EmployeeResource extends Resource
                             ->label('Country')
                             ->options(Country::all()->pluck('name', 'id')->toArray())
                             ->reactive()
-                            ->required(),
-//                            ->afterStateUpdated(fn(callable $set) => $set('state_id', null)),
+                            ->required()
+                            ->afterStateUpdated(fn(callable $set) => $set('state_id', null)),
                         Select::make('state_id')
                             ->label('State')
                             ->options(function (callable $get) {
