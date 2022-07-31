@@ -2,10 +2,11 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 use JsonSerializable;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Http\Resources\Json\JsonResource;
+
 
 class EmployeeResource extends JsonResource
 {
@@ -29,6 +30,8 @@ class EmployeeResource extends JsonResource
             'birthDate' => $this->birth_date,
             'zip_code' => $this->zip_code,
             'dateHired' => $this->date_hired,
+
+            // deploying    to heroku
         ];
     }
 }
